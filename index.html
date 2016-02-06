@@ -221,6 +221,95 @@
             
               
                 
+                <a class="post-title-link" href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/" itemprop="url">
+                  通过actiivty名字(String) 来跳转activiy
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-06T15:43:32+08:00" content="2016-02-06">
+              2016-02-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用<code>String</code>类型做参数进行的话一般可以通过<code>setAction</code>隐式跳转，或者是通过反射获取到<code>class</code></p>
+<p>普通的跳转例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(DemoActivity.<span class="keyword">this</span>, DemoActivity.class);</span><br></pre></td></tr></table></figure></p>
+<p>其内部是这样的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Intent</span><span class="params">(Context packageContext, Class&lt;?&gt; cls)</span> </span>&#123;</span><br><span class="line">    mComponent = <span class="keyword">new</span> ComponentName(packageContext, cls);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>说到底是获取到<code>mComponent</code>这个对象<br>官方有这样一个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Intent <span class="title">setClassName</span> <span class="params">(Context packageContext, String className)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>其内部是这样的<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function">Intent <span class="title">setClassName</span><span class="params">(Context packageContext, String className)</span> </span>&#123;</span><br><span class="line">    mComponent = <span class="keyword">new</span> ComponentName(packageContext, className);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>两个方法其实获取到的对象是相同的，因此实践之后果然也可以进行跳转。<br>但是注意的是一定要把类名写完整<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setClassName(DemoActivity.<span class="keyword">this</span>, <span class="string">"com.example.baifan.choosepicdemo.ChoosePicActivity"</span>);</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/Baifann.github.io/2016/01/25/RxJava学习/" itemprop="url">
                   RxJava学习
                 </a>
@@ -351,7 +440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -365,7 +454,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
