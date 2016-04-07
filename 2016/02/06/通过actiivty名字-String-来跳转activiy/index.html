@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -41,7 +41,7 @@
 <link href="/Baifann.github.io/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android intent," />
+  <meta name="keywords" content="android,intent," />
 
 
 
@@ -58,28 +58,25 @@
 
 
 <meta name="description" content="用String类型做参数进行的话一般可以通过setAction隐式跳转，或者是通过反射获取到class
-普通的跳转例如1Intent intent = new Intent(DemoActivity.this, DemoActivity.class);
-其内部是这样的123public Intent(Context packageContext, Class&amp;lt;?&amp;gt; cls) &amp;#123">
+普通的跳转例如1Intent intent = new Intent(DemoActivity.this, DemoActivity.class);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通过actiivty名字(String) 来跳转activiy">
 <meta property="og:url" content="https://Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/index.html">
 <meta property="og:site_name" content="baifann's Notes">
 <meta property="og:description" content="用String类型做参数进行的话一般可以通过setAction隐式跳转，或者是通过反射获取到class
-普通的跳转例如1Intent intent = new Intent(DemoActivity.this, DemoActivity.class);
-其内部是这样的123public Intent(Context packageContext, Class&amp;lt;?&amp;gt; cls) &amp;#123">
-<meta property="og:updated_time" content="2016-02-06T07:46:57.000Z">
+普通的跳转例如1Intent intent = new Intent(DemoActivity.this, DemoActivity.class);">
+<meta property="og:updated_time" content="2016-04-07T05:53:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过actiivty名字(String) 来跳转activiy">
 <meta name="twitter:description" content="用String类型做参数进行的话一般可以通过setAction隐式跳转，或者是通过反射获取到class
-普通的跳转例如1Intent intent = new Intent(DemoActivity.this, DemoActivity.class);
-其内部是这样的123public Intent(Context packageContext, Class&amp;lt;?&amp;gt; cls) &amp;#123">
+普通的跳转例如1Intent intent = new Intent(DemoActivity.this, DemoActivity.class);">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -250,6 +247,7 @@
       
         <p>用<code>String</code>类型做参数进行的话一般可以通过<code>setAction</code>隐式跳转，或者是通过反射获取到<code>class</code></p>
 <p>普通的跳转例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(DemoActivity.<span class="keyword">this</span>, DemoActivity.class);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>其内部是这样的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Intent</span><span class="params">(Context packageContext, Class&lt;?&gt; cls)</span> </span>&#123;</span><br><span class="line">    mComponent = <span class="keyword">new</span> ComponentName(packageContext, cls);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>说到底是获取到<code>mComponent</code>这个对象<br>官方有这样一个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Intent <span class="title">setClassName</span> <span class="params">(Context packageContext, String className)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>其内部是这样的<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function">Intent <span class="title">setClassName</span><span class="params">(Context packageContext, String className)</span> </span>&#123;</span><br><span class="line">    mComponent = <span class="keyword">new</span> ComponentName(packageContext, className);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -262,7 +260,9 @@
       
         <div class="post-tags">
           
-            <a href="/Baifann.github.io/tags/android-intent/" rel="tag">#android intent</a>
+            <a href="/Baifann.github.io/tags/android/" rel="tag">#android</a>
+          
+            <a href="/Baifann.github.io/tags/intent/" rel="tag">#intent</a>
           
         </div>
       
@@ -359,7 +359,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -427,7 +427,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
