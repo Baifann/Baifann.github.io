@@ -41,7 +41,7 @@
 <link href="/Baifann.github.io/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="gradle," />
 
 
 
@@ -57,15 +57,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="baifann's Notes">
-<meta property="og:url" content="https://Baifann.github.io/index.html">
+<meta name="description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。
+根据不同版本设置不同常量语法:1buildConfigField &quot;boolean&quot;, &quot;API_ENV&quot;, &quot;true&quot;
+支持String、boolean例子：有两个版本 debug和release，必">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gradle简单使用">
+<meta property="og:url" content="https://Baifann.github.io/2016/05/24/gradle简单使用/index.html">
 <meta property="og:site_name" content="baifann's Notes">
-<meta property="og:description">
+<meta property="og:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。
+根据不同版本设置不同常量语法:1buildConfigField &quot;boolean&quot;, &quot;API_ENV&quot;, &quot;true&quot;
+支持String、boolean例子：有两个版本 debug和release，必">
+<meta property="og:updated_time" content="2016-05-24T05:52:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="baifann's Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="gradle简单使用">
+<meta name="twitter:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。
+根据不同版本设置不同常量语法:1buildConfigField &quot;boolean&quot;, &quot;API_ENV&quot;, &quot;true&quot;
+支持String、boolean例子：有两个版本 debug和release，必">
 
 
 
@@ -83,7 +90,7 @@
   };
 </script>
 
-  <title> baifann's Notes </title>
+  <title> gradle简单使用 | baifann's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -102,9 +109,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -183,15 +188,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-
-    
-      
 
   
   
@@ -211,10 +210,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/Baifann.github.io/2016/05/24/gradle简单使用/" itemprop="url">
-                  gradle简单使用
-                </a>
+                gradle简单使用
               
             
           </h1>
@@ -252,9 +248,7 @@
       
 
       
-        
-          
-            <p>在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。</p>
+        <p>在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。</p>
 <h3 id="u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF"><a href="#u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF" class="headerlink" title="根据不同版本设置不同常量"></a>根据不同版本设置不同常量</h3><p>语法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buildConfigField <span class="string">"boolean"</span>, <span class="string">"API_ENV"</span>, <span class="string">"true"</span></span><br></pre></td></tr></table></figure></p>
 <p>支持String、boolean<br>例子：有两个版本 <code>debug</code>和<code>release</code>，必须得有debug，感觉是这样<br>比如正式版和开发版服务器的地址是不同的，这时可以在gradle当中配置<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">"String"</span>, <span class="string">"API_URL"</span>,</span><br><span class="line">               <span class="string">"\"http://test.example.com/api\""</span></span><br><span class="line">               buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_HTTP_CALLS"</span>, <span class="string">"true"</span></span><br><span class="line">     &#125;</span><br><span class="line">       release &#123;</span><br><span class="line">            buildConfigField <span class="string">"String"</span>, <span class="string">"API_URL"</span>,</span><br><span class="line">                <span class="string">"\"http://example.com/api\""</span></span><br><span class="line">               buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_HTTP_CALLS"</span>,<span class="string">"false"</span></span><br><span class="line">     &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>代码获取<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String apiUrl = BuildConfig.API_URL;</span><br></pre></td></tr></table></figure></p>
@@ -284,208 +278,45 @@ assembleWandoujia - Assembles all Wandoujia builds.
 <pre><code>gradle assembleWandoujia
 </code></pre><p>这样就会打包豌豆荚的4个包。</p>
 
-          
-        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/" itemprop="url">
-                  通过actiivty名字(String) 来跳转activiy
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-06T15:43:32+08:00" content="2016-02-06">
-              2016-02-06
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-          
-
-          
-
-          
+            <a href="/Baifann.github.io/tags/gradle/" rel="tag">#gradle</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>用<code>String</code>类型做参数进行的话一般可以通过<code>setAction</code>隐式跳转，或者是通过反射获取到<code>class</code></p>
-<p>普通的跳转例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(DemoActivity.<span class="keyword">this</span>, DemoActivity.class);</span><br></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/" rel="next" title="通过actiivty名字(String) 来跳转activiy">
+                <i class="fa fa-chevron-left"></i> 通过actiivty名字(String) 来跳转activiy
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/Baifann.github.io/2016/01/25/RxJava学习/" itemprop="url">
-                  RxJava学习
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T09:29:58+08:00" content="2016-01-25">
-              2016-01-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p><a href="http://gank.io/post/560e15be2dca930e00da1083#toc_1">参考一</a></p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'io.reactivex:rxjava:1.0.14'</span> </span><br><span class="line"><span class="keyword">compile</span> <span class="string">'io.reactivex:rxandroid:1.0.1'</span></span><br></pre></td></tr></table></figure>
-<p>创建<code>observable</code>对象,其中<code>onNext()</code>可以执行任意次，但最后必须执行<code>onCompleted()</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;String&gt; observable = Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;String&gt;() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> String&gt; subscriber)</span> </span>&#123;</span><br><span class="line">                subscriber.onNext(<span class="string">"hehe"</span>);</span><br><span class="line">                subscriber.onCompleted();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>简单一点<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Observable&lt;String&gt; observable = Observable.just(<span class="string">"easyHehe"</span>);</span><br><span class="line"><span class="comment">//依次执行onNext("easyHehe)</span></span><br><span class="line"><span class="comment">//onCompleted();</span></span><br></pre></td></tr></table></figure></p>
-<p>用一个数组也不是不行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str[] = &#123;<span class="string">"..."</span>&#125;;</span><br><span class="line">Observable&lt;String&gt; observable = Observable.from(str);</span><br><span class="line"><span class="comment">//依次执行onNext()...,执行次数为数组的长度;</span></span><br></pre></td></tr></table></figure></p>
-<p>创建<code>subscriber</code>对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Subscriber&lt;String&gt; stringSubscriber = <span class="keyword">new</span> Subscriber&lt;String&gt;() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">                String text = s;</span><br><span class="line">                Log.i(<span class="string">"hehe"</span>, s);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure></p>
-<p>讲<code>observable</code>与<code>subscriber</code>联系起来，这样做很重要<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(stringSubscriber);</span><br></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Baifann.github.io/2016/01/25/RxJava学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -493,6 +324,10 @@ assembleWandoujia - Assembles all Wandoujia builds.
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -512,8 +347,17 @@ assembleWandoujia - Assembles all Wandoujia builds.
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/Baifann.github.io/images/default_avatar.jpg"
@@ -560,6 +404,23 @@ assembleWandoujia - Assembles all Wandoujia builds.
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF"><span class="nav-number">1.</span> <span class="nav-text">根据不同版本设置不同常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001_u52A8_u6001_u66F4_u6539xml_u4E2D_u7684"><span class="nav-number">1.1.</span> <span class="nav-text">1、动态更改xml中的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001_u52A8_u6001_u66F4_u6539_resValue"><span class="nav-number">1.2.</span> <span class="nav-text">2、动态更改 resValue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u52A8_u6001_u66F4_u6539_u5305_u540D_u4EE5_u53CA_u6E20_u9053_u53D8_u91CF"><span class="nav-number">2.</span> <span class="nav-text">动态更改包名以及渠道变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u66F4_u6539_u4E86_u5305_u540D__u5E76_u751F_u6210_u4E86_playstore_u4EE5_u53CAhiapk_u4E24_u4E2A_u6E20_u9053_u7684_u5305"><span class="nav-number">2.1.</span> <span class="nav-text">更改了包名 并生成了 playstore以及hiapk两个渠道的包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD9_u662F_u751F_u6210_u4E86wandoujia_u7684_u6E20_u9053_u5305_uFF0C_u5E76_u4E14_u5C06xml_u4E2D_u7684_u6E20_u9053_u53D8_u91CF_u66F4_u6539_u6210_u4E86wandoujia"><span class="nav-number">3.</span> <span class="nav-text">这是生成了wandoujia的渠道包，并且将xml中的渠道变量更改成了wandoujia</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u800C_u8FD9_u4E2A_u53D8_u91CF_u5728xml_u4E2D_u662F_u8FD9_u4E2A_u5F62_u5F0F"><span class="nav-number">3.1.</span> <span class="nav-text">而这个变量在xml中是这个形式</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -634,6 +495,167 @@ assembleWandoujia - Assembles all Wandoujia builds.
   
 
   
+  
+<script type="text/javascript" src="/Baifann.github.io/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
