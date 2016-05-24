@@ -63,7 +63,7 @@
 <meta property="og:url" content="https://Baifann.github.io/2016/05/24/gradle简单使用/index.html">
 <meta property="og:site_name" content="baifann's Notes">
 <meta property="og:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。">
-<meta property="og:updated_time" content="2016-05-24T05:56:34.000Z">
+<meta property="og:updated_time" content="2016-05-24T06:12:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gradle简单使用">
 <meta name="twitter:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。">
@@ -272,6 +272,12 @@ assembleWandoujia - Assembles all Wandoujia builds.
 </code></pre><p>比方说我只想打wandoujia的渠道包<br>就执行</p>
 <pre><code>gradle assembleWandoujia
 </code></pre><p>这样就会打包豌豆荚的4个包。</p>
+<h4 id="u4EE5_u4E0B_u662F_u6211_u4E4B_u524D_u7F16_u8BD1_u65F6_u9047_u5230_u7684_u9519_u8BEF_u53CA_u89E3_u51B3_u65B9_u6CD5"><a href="#u4EE5_u4E0B_u662F_u6211_u4E4B_u524D_u7F16_u8BD1_u65F6_u9047_u5230_u7684_u9519_u8BEF_u53CA_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="以下是我之前编译时遇到的错误及解决方法"></a>以下是我之前编译时遇到的错误及解决方法</h4><ul>
+<li>.9图变形的问题可以通过重新制作点9图，或者将.9图改成普通的.png图片</li>
+<li>还遇到过values文件夹得问题，里面的attrs可能重复项也会导致gradle编译不成功</li>
+<li>values文件夹中的color文件的格式错误，比如name多加了一个空格</li>
+<li>\ttf这种问题。主要是该文件不是utf-8中的无rom要改成这种格式</li>
+</ul>
 
       
     </div>
@@ -409,7 +415,7 @@ assembleWandoujia - Assembles all Wandoujia builds.
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF"><span class="nav-number">1.</span> <span class="nav-text">根据不同版本设置不同常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001_u52A8_u6001_u66F4_u6539xml_u4E2D_u7684"><span class="nav-number">1.1.</span> <span class="nav-text">1、动态更改xml中的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001_u52A8_u6001_u66F4_u6539_resValue"><span class="nav-number">1.2.</span> <span class="nav-text">2、动态更改 resValue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u52A8_u6001_u66F4_u6539_u5305_u540D_u4EE5_u53CA_u6E20_u9053_u53D8_u91CF"><span class="nav-number">2.</span> <span class="nav-text">动态更改包名以及渠道变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u66F4_u6539_u4E86_u5305_u540D__u5E76_u751F_u6210_u4E86_playstore_u4EE5_u53CAhiapk_u4E24_u4E2A_u6E20_u9053_u7684_u5305"><span class="nav-number">2.1.</span> <span class="nav-text">更改了包名 并生成了 playstore以及hiapk两个渠道的包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD9_u662F_u751F_u6210_u4E86wandoujia_u7684_u6E20_u9053_u5305_uFF0C_u5E76_u4E14_u5C06xml_u4E2D_u7684_u6E20_u9053_u53D8_u91CF_u66F4_u6539_u6210_u4E86wandoujia"><span class="nav-number">3.</span> <span class="nav-text">这是生成了wandoujia的渠道包，并且将xml中的渠道变量更改成了wandoujia</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u800C_u8FD9_u4E2A_u53D8_u91CF_u5728xml_u4E2D_u662F_u8FD9_u4E2A_u5F62_u5F0F"><span class="nav-number">3.1.</span> <span class="nav-text">而这个变量在xml中是这个形式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF"><span class="nav-number">1.</span> <span class="nav-text">根据不同版本设置不同常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001_u52A8_u6001_u66F4_u6539xml_u4E2D_u7684"><span class="nav-number">1.1.</span> <span class="nav-text">1、动态更改xml中的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001_u52A8_u6001_u66F4_u6539_resValue"><span class="nav-number">1.2.</span> <span class="nav-text">2、动态更改 resValue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u52A8_u6001_u66F4_u6539_u5305_u540D_u4EE5_u53CA_u6E20_u9053_u53D8_u91CF"><span class="nav-number">2.</span> <span class="nav-text">动态更改包名以及渠道变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u66F4_u6539_u4E86_u5305_u540D__u5E76_u751F_u6210_u4E86_playstore_u4EE5_u53CAhiapk_u4E24_u4E2A_u6E20_u9053_u7684_u5305"><span class="nav-number">2.1.</span> <span class="nav-text">更改了包名 并生成了 playstore以及hiapk两个渠道的包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD9_u662F_u751F_u6210_u4E86wandoujia_u7684_u6E20_u9053_u5305_uFF0C_u5E76_u4E14_u5C06xml_u4E2D_u7684_u6E20_u9053_u53D8_u91CF_u66F4_u6539_u6210_u4E86wandoujia"><span class="nav-number">3.</span> <span class="nav-text">这是生成了wandoujia的渠道包，并且将xml中的渠道变量更改成了wandoujia</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u800C_u8FD9_u4E2A_u53D8_u91CF_u5728xml_u4E2D_u662F_u8FD9_u4E2A_u5F62_u5F0F"><span class="nav-number">3.1.</span> <span class="nav-text">而这个变量在xml中是这个形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4EE5_u4E0B_u662F_u6211_u4E4B_u524D_u7F16_u8BD1_u65F6_u9047_u5230_u7684_u9519_u8BEF_u53CA_u89E3_u51B3_u65B9_u6CD5"><span class="nav-number">3.2.</span> <span class="nav-text">以下是我之前编译时遇到的错误及解决方法</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
