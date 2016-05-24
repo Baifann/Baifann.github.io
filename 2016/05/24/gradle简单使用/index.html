@@ -57,22 +57,16 @@
 
 
 
-<meta name="description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。
-根据不同版本设置不同常量语法:1buildConfigField &quot;boolean&quot;, &quot;API_ENV&quot;, &quot;true&quot;
-支持String、boolean例子：有两个版本 debug和release，必">
+<meta name="description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gradle简单使用">
 <meta property="og:url" content="https://Baifann.github.io/2016/05/24/gradle简单使用/index.html">
 <meta property="og:site_name" content="baifann's Notes">
-<meta property="og:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。
-根据不同版本设置不同常量语法:1buildConfigField &quot;boolean&quot;, &quot;API_ENV&quot;, &quot;true&quot;
-支持String、boolean例子：有两个版本 debug和release，必">
-<meta property="og:updated_time" content="2016-05-24T05:52:05.000Z">
+<meta property="og:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。">
+<meta property="og:updated_time" content="2016-05-24T05:56:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gradle简单使用">
-<meta name="twitter:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。
-根据不同版本设置不同常量语法:1buildConfigField &quot;boolean&quot;, &quot;API_ENV&quot;, &quot;true&quot;
-支持String、boolean例子：有两个版本 debug和release，必">
+<meta name="twitter:description" content="在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。">
 
 
 
@@ -249,6 +243,7 @@
 
       
         <p>在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。</p>
+<a id="more"></a>
 <h3 id="u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF"><a href="#u6839_u636E_u4E0D_u540C_u7248_u672C_u8BBE_u7F6E_u4E0D_u540C_u5E38_u91CF" class="headerlink" title="根据不同版本设置不同常量"></a>根据不同版本设置不同常量</h3><p>语法:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buildConfigField <span class="string">"boolean"</span>, <span class="string">"API_ENV"</span>, <span class="string">"true"</span></span><br></pre></td></tr></table></figure></p>
 <p>支持String、boolean<br>例子：有两个版本 <code>debug</code>和<code>release</code>，必须得有debug，感觉是这样<br>比如正式版和开发版服务器的地址是不同的，这时可以在gradle当中配置<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            buildConfigField <span class="string">"String"</span>, <span class="string">"API_URL"</span>,</span><br><span class="line">               <span class="string">"\"http://test.example.com/api\""</span></span><br><span class="line">               buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_HTTP_CALLS"</span>, <span class="string">"true"</span></span><br><span class="line">     &#125;</span><br><span class="line">       release &#123;</span><br><span class="line">            buildConfigField <span class="string">"String"</span>, <span class="string">"API_URL"</span>,</span><br><span class="line">                <span class="string">"\"http://example.com/api\""</span></span><br><span class="line">               buildConfigField <span class="string">"boolean"</span>, <span class="string">"LOG_HTTP_CALLS"</span>,<span class="string">"false"</span></span><br><span class="line">     &#125; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>代码获取<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String apiUrl = BuildConfig.API_URL;</span><br></pre></td></tr></table></figure></p>
