@@ -1,0 +1,623 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/Baifann.github.io/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/Baifann.github.io/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/Baifann.github.io/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="gradle," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文的重点是gradle从其他文件中获取相关数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gradle简单使用 续">
+<meta property="og:url" content="https://Baifann.github.io/2016/05/27/gradle简单使用-续/index.html">
+<meta property="og:site_name" content="baifann's Notes">
+<meta property="og:description" content="本文的重点是gradle从其他文件中获取相关数据">
+<meta property="og:updated_time" content="2016-05-27T06:43:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gradle简单使用 续">
+<meta name="twitter:description" content="本文的重点是gradle从其他文件中获取相关数据">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> gradle简单使用 续 | baifann's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cde909fdbead9a926f3713dc33467514";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/Baifann.github.io/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">baifann's Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">边学习边记录</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                gradle简单使用 续
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T11:39:53+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Baifann.github.io/2016/05/27/gradle简单使用-续/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/gradle简单使用-续/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文的重点是gradle从其他文件中获取相关数据<br><a id="more"></a></p>
+<h3 id="u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E"><a href="#u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E" class="headerlink" title="从proties文件中获取数据"></a>从proties文件中获取数据</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">build.gradle:</span><br><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties()</span><br><span class="line">properties.load(<span class="keyword">project</span>.rootProject.<span class="keyword">file</span>(<span class="string">'local.properties'</span>).newDataInputStream())</span><br><span class="line">android &#123;</span><br><span class="line">    ……省略很多</span><br><span class="line">    manifestPlaceholders = [UMENG_CHANNEL_VALUE : <span class="string">"umeng"</span>,</span><br><span class="line">                                UMENG_APPKEY_VALUE : properties.getProperty(<span class="string">"umengAppKey"</span>),</span><br><span class="line">                                ]</span><br></pre></td></tr></table></figure>
+<p>文件中是这么写的<br><strong>local.properties：</strong></p>
+<pre><code>sdk.dir=/Users/lanyy/Documents/adt/sdk
+umengAppKey=*************    
+</code></pre><h3 id="u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6"><a href="#u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6" class="headerlink" title="从xml文件中读取"></a>从xml文件中读取</h3><p>可参考：<a href="http://www.infoq.com/cn/articles/android-in-depth-gradle" target="_blank" rel="external">http://www.infoq.com/cn/articles/android-in-depth-gradle</a></p>
+<h3 id="u81EA_u5B9A_u4E49apk_u540D"><a href="#u81EA_u5B9A_u4E49apk_u540D" class="headerlink" title="自定义apk名"></a>自定义apk名</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">buildTypes &#123;</span><br><span class="line">        release&#123;</span><br><span class="line">            signingConfig signingConfigs.myConfig</span><br><span class="line">            applicationVariants.all &#123; variant -&gt;</span><br><span class="line">                variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">                    <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                    <span class="keyword">if</span> (outputFile != <span class="keyword">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)) &#123;</span><br><span class="line">                        <span class="comment">// 输出apk名称为1.0_2015-01-15_wandoujia.apk</span></span><br><span class="line">                        <span class="keyword">def</span> fileName = <span class="string">"$&#123;defaultConfig.versionName&#125;_$&#123;releaseTime()&#125;_$&#123;variant.productFlavors[0].name&#125;.apk"</span></span><br><span class="line">                        output.outputFile = <span class="keyword">new</span> <span class="keyword">File</span>(outputFile.parent, fileName)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u5C06apk_u8F93_u51FA_u5230_u6307_u5B9A_u4F4D_u7F6E"><a href="#u5C06apk_u8F93_u51FA_u5230_u6307_u5B9A_u4F4D_u7F6E" class="headerlink" title="将apk输出到指定位置"></a>将apk输出到指定位置</h3><p>这里同样用上述的栗子，只要将最后一句</p>
+<pre><code>output.outputFile = new File(outputFile.parent, fileName)
+</code></pre><p>修改为</p>
+<pre><code>output.outputFile = new File(&quot;自定义文件夹&quot;, fileName)
+</code></pre><p>这个时候apk会输出到app项目下的一个叫<strong>自定义文件夹</strong>的文件夹</p>
+<h3 id="u81EA_u52A8_u5FAA_u73AF_u6253_u5305"><a href="#u81EA_u52A8_u5FAA_u73AF_u6253_u5305" class="headerlink" title="自动循环打包"></a>自动循环打包</h3><p>这其实是我同事研究的成果，场景是要将服务器配置，及相关其他数据放进另外的文件中，gradle读取文件，从而打包。这里说的有点抽象，直接上代码。<br>首先有一个xml文件，我们把它取名为<code>apkproperties.xml</code><br>里面的内容为<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">apks</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">apk</span> <span class="attribute">name</span> = "<span class="attribute">dev</span>" <span class="attribute">serverpath</span>=<span class="value">"服务器地址"</span> <span class="attribute">uploadfileserverip</span>=<span class="value">"上传ip"</span> <span class="attribute">uploadfileserverport</span>=<span class="value">"上传端口"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">apk</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">apk</span> <span class="attribute">name</span> = "<span class="attribute">test</span>" <span class="attribute">serverpath</span>=<span class="value">"服务器地址"</span> <span class="attribute">uploadfileserverip</span>=<span class="value">"上传ip"</span> <span class="attribute">uploadfileserverport</span>=<span class="value">"上传端口"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">apk</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">apk</span> <span class="attribute">name</span> = "<span class="attribute">demo</span>"<span class="attribute">serverpath</span>=<span class="value">"服务器地址"</span> <span class="attribute">uploadfileserverip</span>=<span class="value">"上传ip"</span> <span class="attribute">uploadfileserverport</span>=<span class="value">"上传端口"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">apk</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">apks</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>gradle这么写<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">productFlavors &#123;</span><br><span class="line">    </span><br><span class="line"> </span><br><span class="line">        <span class="comment">//def apks = new XmlParser().parseText(xml)</span></span><br><span class="line">        <span class="keyword">def</span> xmlFile = <span class="keyword">file</span>(<span class="string">'apkproperties.xml'</span>)</span><br><span class="line">        <span class="keyword">def</span> <span class="keyword">file</span> = <span class="keyword">file</span>(xmlFile.absolutePath)</span><br><span class="line">        <span class="keyword">def</span> apks = <span class="keyword">new</span> XmlParser().parse(<span class="keyword">file</span>.path)</span><br><span class="line"></span><br><span class="line">        apks.apk.<span class="keyword">each</span>&#123;</span><br><span class="line">            <span class="keyword">def</span> name = it.<span class="string">'@name'</span></span><br><span class="line">            <span class="keyword">def</span> serverpath = it.<span class="string">'@serverpath'</span></span><br><span class="line">            <span class="keyword">def</span> uploadfileserverip = it.<span class="string">'@uploadfileserverip'</span></span><br><span class="line">            <span class="keyword">def</span> uploadfileserverport = it.<span class="string">'@uploadfileserverport'</span></span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            <span class="string">"$&#123;name&#125;"</span>(&#123;</span><br><span class="line">                manifestPlaceholders = [SERVER_PATH_VALUE: <span class="string">"$serverpath"</span>,UPLOAD_FILE_SERVER_IP_VALUE: <span class="string">"$uploadfileserverip"</span>,UPLOAD_FILE_SERVER_PORT_VALUE: <span class="string">"$uploadfileserverport"</span>,BRANDCODE_VALUE: <span class="string">"$brandCode"</span>]</span><br><span class="line">            &#125;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就能自动打出三个，分贝demo，dev，test不同环境的包了。<br>其实gradle是十分灵活的，熟练他的语法才能创造出更加灵活的打包方式！</p>
+<p>参考：<a href="http://stormzhang.com/devtools/2015/01/15/android-studio-tutorial6/" target="_blank" rel="external">http://stormzhang.com/devtools/2015/01/15/android-studio-tutorial6/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/Baifann.github.io/tags/gradle/" rel="tag">#gradle</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Baifann.github.io/2016/05/24/gradle简单使用/" rel="next" title="gradle简单使用">
+                <i class="fa fa-chevron-left"></i> gradle简单使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/27/gradle简单使用-续/"
+           data-title="gradle简单使用 续" data-url="https://Baifann.github.io/2016/05/27/gradle简单使用-续/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/Baifann.github.io/images/avatar.gif"
+               alt="baifann" />
+          <p class="site-author-name" itemprop="name">baifann</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E"><span class="nav-number">1.</span> <span class="nav-text">从proties文件中获取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6"><span class="nav-number">2.</span> <span class="nav-text">从xml文件中读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u81EA_u5B9A_u4E49apk_u540D"><span class="nav-number">3.</span> <span class="nav-text">自定义apk名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C06apk_u8F93_u51FA_u5230_u6307_u5B9A_u4F4D_u7F6E"><span class="nav-number">4.</span> <span class="nav-text">将apk输出到指定位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u81EA_u52A8_u5FAA_u73AF_u6253_u5305"><span class="nav-number">5.</span> <span class="nav-text">自动循环打包</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baifann</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/Baifann.github.io/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/Baifann.github.io/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/Baifann.github.io/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/Baifann.github.io/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"baifann"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
