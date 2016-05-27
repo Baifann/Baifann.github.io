@@ -293,7 +293,12 @@
 
       
         
-          <p>本文的重点是gradle从其他文件中获取相关数据<br>
+          <p>本文的重点是gradle从其他文件中获取相关数据</p>
+<h3 id="u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E"><a href="#u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E" class="headerlink" title="从proties文件中获取数据"></a>从proties文件中获取数据</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">build.gradle:</span><br><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties()</span><br><span class="line">properties.load(<span class="keyword">project</span>.rootProject.<span class="keyword">file</span>(<span class="string">'local.properties'</span>).newDataInputStream())</span><br><span class="line">android &#123;</span><br><span class="line">    ……省略很多</span><br><span class="line">    manifestPlaceholders = [UMENG_CHANNEL_VALUE : <span class="string">"umeng"</span>,</span><br><span class="line">                                UMENG_APPKEY_VALUE : properties.getProperty(<span class="string">"umengAppKey"</span>),</span><br><span class="line">                                ]</span><br></pre></td></tr></table></figure>
+<p>文件中是这么写的<br><strong>local.properties：</strong></p>
+<pre><code>sdk.dir=/Users/lanyy/Documents/adt/sdk
+umengAppKey=*************    
+</code></pre>
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/05/27/gradle简单使用-续/#more" rel="contents">
               阅读全文 &raquo;

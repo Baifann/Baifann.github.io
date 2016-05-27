@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="本文的重点是gradle从其他文件中获取相关数据">
+<meta name="description" content="本文的重点是gradle从其他文件中获取相关数据
+从proties文件中获取数据123456789build.gradle:apply plugin: &apos;com.android.application&apos;Properties properties = new Properties()properties.load(project.rootProject.file(&apos;local.properties&apos;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gradle简单使用 续">
 <meta property="og:url" content="https://Baifann.github.io/2016/05/27/gradle简单使用-续/index.html">
 <meta property="og:site_name" content="baifann's Notes">
-<meta property="og:description" content="本文的重点是gradle从其他文件中获取相关数据">
-<meta property="og:updated_time" content="2016-05-27T06:43:28.000Z">
+<meta property="og:description" content="本文的重点是gradle从其他文件中获取相关数据
+从proties文件中获取数据123456789build.gradle:apply plugin: &apos;com.android.application&apos;Properties properties = new Properties()properties.load(project.rootProject.file(&apos;local.properties&apos;">
+<meta property="og:updated_time" content="2016-05-27T06:48:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gradle简单使用 续">
-<meta name="twitter:description" content="本文的重点是gradle从其他文件中获取相关数据">
+<meta name="twitter:description" content="本文的重点是gradle从其他文件中获取相关数据
+从proties文件中获取数据123456789build.gradle:apply plugin: &apos;com.android.application&apos;Properties properties = new Properties()properties.load(project.rootProject.file(&apos;local.properties&apos;">
 
 
 
@@ -293,12 +296,13 @@
       
 
       
-        <p>本文的重点是gradle从其他文件中获取相关数据<br><a id="more"></a></p>
+        <p>本文的重点是gradle从其他文件中获取相关数据</p>
 <h3 id="u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E"><a href="#u4ECEproties_u6587_u4EF6_u4E2D_u83B7_u53D6_u6570_u636E" class="headerlink" title="从proties文件中获取数据"></a>从proties文件中获取数据</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">build.gradle:</span><br><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties()</span><br><span class="line">properties.load(<span class="keyword">project</span>.rootProject.<span class="keyword">file</span>(<span class="string">'local.properties'</span>).newDataInputStream())</span><br><span class="line">android &#123;</span><br><span class="line">    ……省略很多</span><br><span class="line">    manifestPlaceholders = [UMENG_CHANNEL_VALUE : <span class="string">"umeng"</span>,</span><br><span class="line">                                UMENG_APPKEY_VALUE : properties.getProperty(<span class="string">"umengAppKey"</span>),</span><br><span class="line">                                ]</span><br></pre></td></tr></table></figure>
 <p>文件中是这么写的<br><strong>local.properties：</strong></p>
 <pre><code>sdk.dir=/Users/lanyy/Documents/adt/sdk
 umengAppKey=*************    
-</code></pre><h3 id="u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6"><a href="#u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6" class="headerlink" title="从xml文件中读取"></a>从xml文件中读取</h3><p>可参考：<a href="http://www.infoq.com/cn/articles/android-in-depth-gradle" target="_blank" rel="external">http://www.infoq.com/cn/articles/android-in-depth-gradle</a></p>
+</code></pre><a id="more"></a>
+<h3 id="u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6"><a href="#u4ECExml_u6587_u4EF6_u4E2D_u8BFB_u53D6" class="headerlink" title="从xml文件中读取"></a>从xml文件中读取</h3><p>可参考：<a href="http://www.infoq.com/cn/articles/android-in-depth-gradle" target="_blank" rel="external">http://www.infoq.com/cn/articles/android-in-depth-gradle</a></p>
 <h3 id="u81EA_u5B9A_u4E49apk_u540D"><a href="#u81EA_u5B9A_u4E49apk_u540D" class="headerlink" title="自定义apk名"></a>自定义apk名</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> releaseTime() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date().format(<span class="string">"yyyy-MM-dd"</span>, TimeZone.getTimeZone(<span class="string">"UTC"</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">buildTypes &#123;</span><br><span class="line">        release&#123;</span><br><span class="line">            signingConfig signingConfigs.myConfig</span><br><span class="line">            applicationVariants.all &#123; variant -&gt;</span><br><span class="line">                variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">                    <span class="keyword">def</span> outputFile = output.outputFile</span><br><span class="line">                    <span class="keyword">if</span> (outputFile != <span class="keyword">null</span> &amp;&amp; outputFile.name.endsWith(<span class="string">'.apk'</span>)) &#123;</span><br><span class="line">                        <span class="comment">// 输出apk名称为1.0_2015-01-15_wandoujia.apk</span></span><br><span class="line">                        <span class="keyword">def</span> fileName = <span class="string">"$&#123;defaultConfig.versionName&#125;_$&#123;releaseTime()&#125;_$&#123;variant.productFlavors[0].name&#125;.apk"</span></span><br><span class="line">                        output.outputFile = <span class="keyword">new</span> <span class="keyword">File</span>(outputFile.parent, fileName)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="u5C06apk_u8F93_u51FA_u5230_u6307_u5B9A_u4F4D_u7F6E"><a href="#u5C06apk_u8F93_u51FA_u5230_u6307_u5B9A_u4F4D_u7F6E" class="headerlink" title="将apk输出到指定位置"></a>将apk输出到指定位置</h3><p>这里同样用上述的栗子，只要将最后一句</p>
 <pre><code>output.outputFile = new File(outputFile.parent, fileName)
