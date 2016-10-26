@@ -1,0 +1,620 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/Baifann.github.io/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/Baifann.github.io/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/Baifann.github.io/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="xml形式放在res/anim路径中 名字自定义，下面是个叫setdemo.xml的文件12345678&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&amp;gt;    &amp;lt;alpha        android:start">
+<meta property="og:type" content="article">
+<meta property="og:title" content="补件动画的使用">
+<meta property="og:url" content="https://Baifann.github.io/2016/10/26/补件动画的使用/index.html">
+<meta property="og:site_name" content="baifann's Notes">
+<meta property="og:description" content="xml形式放在res/anim路径中 名字自定义，下面是个叫setdemo.xml的文件12345678&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&amp;gt;    &amp;lt;alpha        android:start">
+<meta property="og:updated_time" content="2016-10-26T15:21:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="补件动画的使用">
+<meta name="twitter:description" content="xml形式放在res/anim路径中 名字自定义，下面是个叫setdemo.xml的文件12345678&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&amp;gt;    &amp;lt;alpha        android:start">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 补件动画的使用 | baifann's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cde909fdbead9a926f3713dc33467514";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/Baifann.github.io/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">baifann's Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">边学习边记录</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                补件动画的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-26T23:19:07+08:00" content="2016-10-26">
+              2016-10-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Baifann.github.io/2016/10/26/补件动画的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/补件动画的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>xml形式放在<code>res/anim</code>路径中 名字自定义，下面是个叫<code>setdemo.xml</code>的文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">alpha</span></span><br><span class="line">        <span class="attribute">android:startOffset</span>=<span class="value">"1000"</span><span class="value">(几秒之后开始动画)</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"1000"</span></span><br><span class="line">        <span class="attribute">android:fromAlpha</span>=<span class="value">"0.0"</span></span><br><span class="line">        <span class="attribute">android:toAlpha</span>=<span class="value">"1.0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>代码中使用xml的动画<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">alpha</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Animation aplphaAnimation = AnimationUtils.loadAnimation(<span class="keyword">this</span>, R.anim.setdemo);</span><br><span class="line">        mBtnClick.startAnimation(aplphaAnimation);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>直接使用代码来<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">aplhaCode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        AlphaAnimation alphaAnimation = <span class="keyword">new</span> AlphaAnimation(<span class="number">1.0F</span>, <span class="number">0.0F</span>);</span><br><span class="line">        alphaAnimation.setDuration(<span class="number">1000</span>);</span><br><span class="line">        mBtnClick.startAnimation(alphaAnimation);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="u5E73_u79FB_u52A8_u753B"><a href="#u5E73_u79FB_u52A8_u753B" class="headerlink" title="平移动画"></a>平移动画</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">translate</span></span><br><span class="line">        <span class="attribute">android:duation</span>=<span class="value">"1000"</span></span><br><span class="line">        <span class="attribute">android:fromXDelta</span>=<span class="value">"0"</span></span><br><span class="line">        <span class="attribute">android:fromYDelta</span>=<span class="value">"0"</span></span><br><span class="line">        <span class="attribute">android:toXDelta</span>=<span class="value">"100%"</span></span><br><span class="line">        <span class="attribute">android:toYDelta</span>=<span class="value">"0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>android:toXDelta=&quot;100&quot;</code>指平移多少像素<br><code>android:toXDelta=&quot;100%&quot;</code>这个属性既可以用数字表示也可以用百分比表示，如果是百分比则表示目标控件的宽或高的百分之多少<br><code>android:toXDelta=&quot;100%p&quot;</code>这里的<code>p</code>表示parent（指屏幕），就是该控件父类布局的宽或高的百分之多少</p>
+<h4 id="u5DEE_u503C_u5668_u7684_u4F7F_u7528"><a href="#u5DEE_u503C_u5668_u7684_u4F7F_u7528" class="headerlink" title="差值器的使用"></a>差值器的使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">translateCode</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Animation translateAnimation = <span class="keyword">new</span> TranslateAnimation(<span class="number">0</span>, <span class="number">100</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">//加速度差值器</span></span><br><span class="line">    translateAnimation.setInterpolator(<span class="keyword">new</span> AccelerateInterpolator());</span><br><span class="line">    <span class="comment">//超过一点 动画到达目的地后会再超过点再回来</span></span><br><span class="line">    translateAnimation.setInterpolator(<span class="keyword">new</span> OvershootInterpolator());</span><br><span class="line">    <span class="comment">//循环好几次 最后结束 参数为循环的次数</span></span><br><span class="line">    translateAnimation.setInterpolator(<span class="keyword">new</span> CycleInterpolator(<span class="number">2</span>));</span><br><span class="line">    mBtnClick.startAnimation(translateAnimation);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u7F29_u653E"><a href="#u7F29_u653E" class="headerlink" title="缩放"></a>缩放</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line">&lt;set xmlns:android="http://schemas.android.com/apk/res/android"&gt;</span><br><span class="line">    &lt;scale</span><br><span class="line">        android:duration="1000"</span><br><span class="line">        android:fromXScale="1f"</span><br><span class="line">        android:fromYScale="1f"</span><br><span class="line">        android:pivotX="50%"</span><br><span class="line">        android:pivotY="50%"</span><br><span class="line">        android:toXScale="2f"</span><br><span class="line">        android:toYScale="2f" /&gt;</span><br><span class="line">&lt;/set&gt;</span><br></pre></td></tr></table></figure>
+<p>代码里也是可以这么设置的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">scaleCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//自身的百分之多少</span></span><br><span class="line">    ScaleAnimation scaleAnimation1 = <span class="keyword">new</span> ScaleAnimation(<span class="number">1f</span>, <span class="number">2f</span>, <span class="number">1f</span>, <span class="number">2f</span>, Animation.RELATIVE_TO_SELF, <span class="number">0.5f</span>, Animation.RELATIVE_TO_SELF, <span class="number">0.5f</span>);</span><br><span class="line">    <span class="comment">//对于父布局的百分之多少</span></span><br><span class="line">    ScaleAnimation scaleAnimation2 = <span class="keyword">new</span> ScaleAnimation(<span class="number">1f</span>, <span class="number">2f</span>, <span class="number">1f</span>, <span class="number">2f</span>, Animation.RELATIVE_TO_PARENT, <span class="number">0.5f</span>, Animation.RELATIVE_TO_PARENT, <span class="number">0.5f</span>);</span><br><span class="line">    <span class="comment">//相对平移多少</span></span><br><span class="line">    ScaleAnimation scaleAnimation3 = <span class="keyword">new</span> ScaleAnimation(<span class="number">1f</span>, <span class="number">2f</span>, <span class="number">1f</span>, <span class="number">2f</span>, <span class="number">0.5f</span>, <span class="number">0.5f</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="u65CB_u8F6C"><a href="#u65CB_u8F6C" class="headerlink" title="旋转"></a>旋转</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">rotate</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"1000"</span></span><br><span class="line">        <span class="attribute">android:fromDegrees</span>=<span class="value">"0"</span></span><br><span class="line">        <span class="attribute">android:pivotX</span>=<span class="value">"50%"</span></span><br><span class="line">        <span class="attribute">android:pivotY</span>=<span class="value">"50%"</span></span><br><span class="line">        <span class="attribute">android:toDegrees</span>=<span class="value">"359"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="u7EC4_u5408_u52A8_u753B"><a href="#u7EC4_u5408_u52A8_u753B" class="headerlink" title="组合动画"></a>组合动画</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">translate</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"2000"</span></span><br><span class="line">        <span class="attribute">android:fromXDelta</span>=<span class="value">"0"</span></span><br><span class="line">        <span class="attribute">android:fromYDelta</span>=<span class="value">"0"</span></span><br><span class="line">        <span class="attribute">android:toXDelta</span>=<span class="value">"0"</span></span><br><span class="line">        <span class="attribute">android:toYDelta</span>=<span class="value">"200%"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">alpha</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"1000"</span></span><br><span class="line">        <span class="attribute">android:fromAlpha</span>=<span class="value">"1"</span></span><br><span class="line">        <span class="attribute">android:startOffset</span>=<span class="value">"2000"</span></span><br><span class="line">        <span class="attribute">android:toAlpha</span>=<span class="value">"0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="fillAfter_fillBefore__u662F_u5426_u505C_u7559_u5728_u52A8_u753B_u7ED3_u675F"><a href="#fillAfter_fillBefore__u662F_u5426_u505C_u7559_u5728_u52A8_u753B_u7ED3_u675F" class="headerlink" title="fillAfter fillBefore 是否停留在动画结束"></a>fillAfter fillBefore 是否停留在动画结束</h3><p>fillBefore是指动画结束时画面停留在第一帧，fillAfter是指动画结束是画面停留在最后一帧。这2个参数不能在,,,中设置没有效果，必须中设置才可以 例如:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">android:fillAfter</span>=<span class="value">"true"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">alpha</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"3000"</span></span><br><span class="line">        <span class="attribute">android:fromAlpha</span>=<span class="value">"0.1"</span></span><br><span class="line">        <span class="attribute">android:toAlpha</span>=<span class="value">"0.5"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>或者再java代码中写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setFillAfter(<span class="keyword">true</span>);</span><br><span class="line">setFillBefore(<span class="keyword">false</span>);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/Baifann.github.io/tags/android/" rel="tag">#android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Baifann.github.io/2016/09/05/mac-android-studio-快捷键/" rel="next" title="mac android studio 快捷键(不断更新)">
+                <i class="fa fa-chevron-left"></i> mac android studio 快捷键(不断更新)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/26/补件动画的使用/"
+           data-title="补件动画的使用" data-url="https://Baifann.github.io/2016/10/26/补件动画的使用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/Baifann.github.io/images/avatar.gif"
+               alt="baifann" />
+          <p class="site-author-name" itemprop="name">baifann</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E73_u79FB_u52A8_u753B"><span class="nav-number">1.</span> <span class="nav-text">平移动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5DEE_u503C_u5668_u7684_u4F7F_u7528"><span class="nav-number">1.1.</span> <span class="nav-text">差值器的使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7F29_u653E"><span class="nav-number">2.</span> <span class="nav-text">缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65CB_u8F6C"><span class="nav-number">3.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EC4_u5408_u52A8_u753B"><span class="nav-number">4.</span> <span class="nav-text">组合动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fillAfter_fillBefore__u662F_u5426_u505C_u7559_u5728_u52A8_u753B_u7ED3_u675F"><span class="nav-number">5.</span> <span class="nav-text">fillAfter fillBefore 是否停留在动画结束</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baifann</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/Baifann.github.io/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/Baifann.github.io/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/Baifann.github.io/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/Baifann.github.io/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/Baifann.github.io/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"baifann"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

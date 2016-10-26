@@ -243,6 +243,111 @@
             
               
                 
+                <a class="post-title-link" href="/Baifann.github.io/2016/10/26/补件动画的使用/" itemprop="url">
+                  补件动画的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-26T23:19:07+08:00" content="2016-10-26">
+              2016-10-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Baifann.github.io/2016/10/26/补件动画的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/补件动画的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>xml形式放在<code>res/anim</code>路径中 名字自定义，下面是个叫<code>setdemo.xml</code>的文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">alpha</span></span><br><span class="line">        <span class="attribute">android:startOffset</span>=<span class="value">"1000"</span><span class="value">(几秒之后开始动画)</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"1000"</span></span><br><span class="line">        <span class="attribute">android:fromAlpha</span>=<span class="value">"0.0"</span></span><br><span class="line">        <span class="attribute">android:toAlpha</span>=<span class="value">"1.0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>代码中使用xml的动画<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">alpha</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Animation aplphaAnimation = AnimationUtils.loadAnimation(<span class="keyword">this</span>, R.anim.setdemo);</span><br><span class="line">        mBtnClick.startAnimation(aplphaAnimation);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>直接使用代码来<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">aplhaCode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        AlphaAnimation alphaAnimation = <span class="keyword">new</span> AlphaAnimation(<span class="number">1.0F</span>, <span class="number">0.0F</span>);</span><br><span class="line">        alphaAnimation.setDuration(<span class="number">1000</span>);</span><br><span class="line">        mBtnClick.startAnimation(alphaAnimation);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/Baifann.github.io/2016/10/26/补件动画的使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/Baifann.github.io/2016/09/05/mac-android-studio-快捷键/" itemprop="url">
                   mac android studio 快捷键(不断更新)
                 </a>
@@ -879,7 +984,7 @@ umengAppKey=*************
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
