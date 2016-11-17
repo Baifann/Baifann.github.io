@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/Baifann.github.io/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/Baifann.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,7 +63,7 @@
 
 
 
-<link href="/Baifann.github.io/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/Baifann.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/Baifann.github.io/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
@@ -96,19 +96,33 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/Baifann.github.io/',
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
     }
   };
 </script>
+
+
+
+
+
+
 
   <title> baifann's Notes </title>
 </head>
@@ -212,6 +226,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -225,13 +241,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/11/16/面试感悟/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -253,13 +282,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-16T21:03:31+08:00" content="2016-11-16">
-              2016-11-16
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -267,9 +294,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/11/16/面试感悟/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/面试感悟/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/面试感悟/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -281,6 +308,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -294,11 +324,13 @@
       
         
           <p>今天去面试，感悟挺深的特此记录下，开始是人事让我坐下叫我做题，前2道是算法的题目，第三道题是数据库方面的，然后道翻译题和一些安卓方面的题目，人事挺冰冷的说你先看下这些题目，如果你前2题会的话问我要答题纸，不然你就可以走了=.=大致就这样。寻思了一下，感觉如果就这么走了岂不是很尴尬！还不如硬着头皮做一下，于是就要来了答题纸开始做，一开始做脑子里想得有点杂，后来才渐渐有了点感觉。</p>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/11/16/面试感悟/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -310,6 +342,7 @@
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -328,13 +361,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/10/26/补间动画的使用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -356,13 +402,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-26T23:19:07+08:00" content="2016-10-26">
-              2016-10-26
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -370,9 +414,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/10/26/补间动画的使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/补间动画的使用/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/补间动画的使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,6 +428,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -399,11 +446,13 @@
           <p>xml形式放在<code>res/anim</code>路径中 名字自定义，下面是个叫<code>setdemo.xml</code>的文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">alpha</span></span><br><span class="line">        <span class="attribute">android:startOffset</span>=<span class="value">"1000"</span><span class="value">(几秒之后开始动画)</span></span><br><span class="line">        <span class="attribute">android:duration</span>=<span class="value">"1000"</span></span><br><span class="line">        <span class="attribute">android:fromAlpha</span>=<span class="value">"0.0"</span></span><br><span class="line">        <span class="attribute">android:toAlpha</span>=<span class="value">"1.0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>代码中使用xml的动画<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">alpha</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Animation aplphaAnimation = AnimationUtils.loadAnimation(<span class="keyword">this</span>, R.anim.setdemo);</span><br><span class="line">        mBtnClick.startAnimation(aplphaAnimation);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>直接使用代码来<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">aplhaCode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        AlphaAnimation alphaAnimation = <span class="keyword">new</span> AlphaAnimation(<span class="number">1.0F</span>, <span class="number">0.0F</span>);</span><br><span class="line">        alphaAnimation.setDuration(<span class="number">1000</span>);</span><br><span class="line">        mBtnClick.startAnimation(alphaAnimation);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/10/26/补间动画的使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -415,6 +464,7 @@
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -433,13 +483,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/09/05/mac-android-studio-快捷键/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -461,13 +524,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-05T13:38:17+08:00" content="2016-09-05">
-              2016-09-05
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -475,9 +536,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/09/05/mac-android-studio-快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/05/mac-android-studio-快捷键/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/05/mac-android-studio-快捷键/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,6 +550,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -608,6 +672,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -625,13 +690,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/05/27/gradle简单使用-续/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -653,13 +731,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T11:39:53+08:00" content="2016-05-27">
-              2016-05-27
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -667,9 +743,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/05/27/gradle简单使用-续/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/gradle简单使用-续/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/gradle简单使用-续/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -681,6 +757,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -699,11 +778,13 @@
 <pre><code>sdk.dir=/Users/lanyy/Documents/adt/sdk
 umengAppKey=*************    
 </code></pre>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/05/27/gradle简单使用-续/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -715,6 +796,7 @@ umengAppKey=*************
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -733,13 +815,26 @@ umengAppKey=*************
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/05/24/gradle简单使用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -761,13 +856,11 @@ umengAppKey=*************
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-24T11:35:46+08:00" content="2016-05-24">
-              2016-05-24
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -775,9 +868,9 @@ umengAppKey=*************
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/05/24/gradle简单使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/gradle简单使用/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/24/gradle简单使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -789,6 +882,9 @@ umengAppKey=*************
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -802,11 +898,13 @@ umengAppKey=*************
       
         
           <p>在公司只能用eclipse来进行Android的开发，可领导突然想用gradle实现自动化打包，之前的概念全是AS使用gradle，于是开始研究起gradle，并就对gradle有了全新的认识。</p>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/05/24/gradle简单使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -818,6 +916,7 @@ umengAppKey=*************
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -836,13 +935,26 @@ umengAppKey=*************
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -864,13 +976,11 @@ umengAppKey=*************
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-06T15:43:32+08:00" content="2016-02-06">
-              2016-02-06
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -878,9 +988,9 @@ umengAppKey=*************
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/06/通过actiivty名字-String-来跳转activiy/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/06/通过actiivty名字-String-来跳转activiy/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -892,6 +1002,9 @@ umengAppKey=*************
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -906,11 +1019,13 @@ umengAppKey=*************
         
           <p>用<code>String</code>类型做参数进行的话一般可以通过<code>setAction</code>隐式跳转，或者是通过反射获取到<code>class</code></p>
 <p>普通的跳转例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(DemoActivity.<span class="keyword">this</span>, DemoActivity.class);</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -922,6 +1037,7 @@ umengAppKey=*************
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -940,13 +1056,26 @@ umengAppKey=*************
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/01/25/RxJava学习/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -968,13 +1097,11 @@ umengAppKey=*************
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T09:29:58+08:00" content="2016-01-25">
-              2016-01-25
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -982,9 +1109,9 @@ umengAppKey=*************
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/Baifann.github.io/2016/01/25/RxJava学习/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/25/RxJava学习/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/25/RxJava学习/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -996,6 +1123,9 @@ umengAppKey=*************
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -1015,11 +1145,13 @@ umengAppKey=*************
 <p>用一个数组也不是不行<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str[] = &#123;<span class="string">"..."</span>&#125;;</span><br><span class="line">Observable&lt;String&gt; observable = Observable.from(str);</span><br><span class="line"><span class="comment">//依次执行onNext()...,执行次数为数组的长度;</span></span><br></pre></td></tr></table></figure></p>
 <p>创建<code>subscriber</code>对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Subscriber&lt;String&gt; stringSubscriber = <span class="keyword">new</span> Subscriber&lt;String&gt;() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">                String text = s;</span><br><span class="line">                Log.i(<span class="string">"hehe"</span>, s);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure></p>
 <p>讲<code>observable</code>与<code>subscriber</code>联系起来，这样做很重要<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(stringSubscriber);</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/Baifann.github.io/2016/01/25/RxJava学习/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1031,6 +1163,7 @@ umengAppKey=*************
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -1076,7 +1209,7 @@ umengAppKey=*************
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/Baifann.github.io/images/avatar.gif"
@@ -1117,6 +1250,9 @@ umengAppKey=*************
         
         
 
+        
+
+
       </section>
 
       
@@ -1141,16 +1277,7 @@ umengAppKey=*************
   <span class="author" itemprop="copyrightHolder">baifann</span>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
         
 
@@ -1200,22 +1327,22 @@ umengAppKey=*************
 
 
   
-  <script type="text/javascript" src="/Baifann.github.io/vendors/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/Baifann.github.io/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/Baifann.github.io/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/Baifann.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/Baifann.github.io/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/Baifann.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/Baifann.github.io/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/Baifann.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/Baifann.github.io/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/Baifann.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/Baifann.github.io/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="/Baifann.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
@@ -1260,19 +1387,29 @@ umengAppKey=*************
 
   
     
+    
+    <script src="/Baifann.github.io/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/Baifann.github.io/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
 
-  
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>
