@@ -84,43 +84,16 @@
 
 
 
-<meta name="description" content="工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有
-
-Android TV中RecyclerView 遇到的坑
-焦点问题
-分割线问题
-子view问题
-设置select问题
-
-
-AS中使用SVN">
+<meta name="description" content="混淆时注意同类名文件我们在开发过程中，一定要注意避免类名重名。即使在不同包中，也有可能会在混淆后出错，导致一个类找不到，这种问题的解决方法是将其中一个同名的类改名。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工作一周总结 recyclerView遇到的坑">
-<meta property="og:url" content="https://Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/index.html">
+<meta property="og:title" content="一周工作总结 避免同类名文件出现">
+<meta property="og:url" content="https://Baifann.github.io/2017/01/02/一周工作总结-避免同类名文件出现/index.html">
 <meta property="og:site_name" content="baifann's Notes">
-<meta property="og:description" content="工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有
-
-Android TV中RecyclerView 遇到的坑
-焦点问题
-分割线问题
-子view问题
-设置select问题
-
-
-AS中使用SVN">
-<meta property="og:updated_time" content="2016-12-04T07:43:18.000Z">
+<meta property="og:description" content="混淆时注意同类名文件我们在开发过程中，一定要注意避免类名重名。即使在不同包中，也有可能会在混淆后出错，导致一个类找不到，这种问题的解决方法是将其中一个同名的类改名。">
+<meta property="og:updated_time" content="2017-01-02T12:40:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工作一周总结 recyclerView遇到的坑">
-<meta name="twitter:description" content="工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有
-
-Android TV中RecyclerView 遇到的坑
-焦点问题
-分割线问题
-子view问题
-设置select问题
-
-
-AS中使用SVN">
+<meta name="twitter:title" content="一周工作总结 避免同类名文件出现">
+<meta name="twitter:description" content="混淆时注意同类名文件我们在开发过程中，一定要注意避免类名重名。即使在不同包中，也有可能会在混淆后出错，导致一个类找不到，这种问题的解决方法是将其中一个同名的类改名。">
 
 
 
@@ -152,7 +125,7 @@ AS中使用SVN">
 
 
 
-  <title> 工作一周总结 recyclerView遇到的坑 | baifann's Notes </title>
+  <title> 一周工作总结 避免同类名文件出现 | baifann's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +246,7 @@ AS中使用SVN">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2017/01/02/一周工作总结-避免同类名文件出现/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="baifann">
@@ -297,7 +270,7 @@ AS中使用SVN">
             
             
               
-                工作一周总结 recyclerView遇到的坑
+                一周工作总结 避免同类名文件出现
               
             
           </h1>
@@ -318,8 +291,8 @@ AS中使用SVN">
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/04/工作一周总结-recyclerView遇到的坑/" itemprop="commentCount"></span>
+                <a href="/Baifann.github.io/2017/01/02/一周工作总结-避免同类名文件出现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/02/一周工作总结-避免同类名文件出现/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,25 +323,11 @@ AS中使用SVN">
       
 
       
-        <p>工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有</p>
-<ul>
-<li>Android TV中RecyclerView 遇到的坑<ul>
-<li>焦点问题</li>
-<li>分割线问题</li>
-<li>子view问题</li>
-<li>设置select问题</li>
-</ul>
-</li>
-<li>AS中使用SVN</li>
-</ul>
+        <h3 id="u6DF7_u6DC6_u65F6_u6CE8_u610F_u540C_u7C7B_u540D_u6587_u4EF6"><a href="#u6DF7_u6DC6_u65F6_u6CE8_u610F_u540C_u7C7B_u540D_u6587_u4EF6" class="headerlink" title="混淆时注意同类名文件"></a>混淆时注意同类名文件</h3><p>我们在开发过程中，一定要注意避免类名重名。即使在不同包中，也有可能会在混淆后出错，导致一个类找不到，这种问题的解决方法是将其中一个同名的类改名。</p>
 <a id="more"></a>
-<h3 id="RecyclerView__u9047_u5230_u7684_u5751"><a href="#RecyclerView__u9047_u5230_u7684_u5751" class="headerlink" title="RecyclerView 遇到的坑"></a>RecyclerView 遇到的坑</h3><h4 id="u7126_u70B9_u95EE_u9898"><a href="#u7126_u70B9_u95EE_u9898" class="headerlink" title="焦点问题"></a>焦点问题</h4><p>主要是recyclerView中并没有像ListView有一些健全的方法，如开始时需要自己的<code>itemView</code>获取焦点，以及<code>itemView</code>设置焦点。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">view</span><span class="class">.requestFocus</span>();</span><br><span class="line"><span class="tag">itemView</span><span class="class">.setFocusable</span>(<span class="tag">true</span>);</span><br></pre></td></tr></table></figure></p>
-<p>这2个方法是处理itemView焦点的，一个是先让它有焦点，一个是将焦点设置在这个view上。但是在<code>recycerView</code>并不会一开始就把自己的<code>itemView</code>创建出来，你需要知道什么时候<code>itemView</code>创建完成，才能将焦点设置在它的身上。这时候需要这个方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                View itemView = getItemIndex(<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">if</span> (itemView == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (mOnMeasureListener != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    mOnMeasureListener.onGetFirstItem(itemView);</span><br><span class="line">                &#125;</span><br><span class="line">                Rect rect = <span class="keyword">new</span> Rect();</span><br><span class="line">                itemView.getGlobalVisibleRect(rect);</span><br><span class="line">                Log.i(<span class="string">"zoom"</span>, rect.toString());</span><br><span class="line">                getViewTreeObserver().removeGlobalOnLayoutListener(<span class="keyword">this</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>你也可以在<code>adapter</code>中通过<code>position = index</code>来设置焦点，但是我的项目中有这样一个要求，有一个焦点框，它会显示在当前有焦点的<code>view</code>上，此时我需要用<code>view..getGlobalVisibleRect(rect);</code>来获取<code>view</code>的坐标，通过坐标将焦点框设置，但是在初始化<code>adapter</code>里，<code>itemView</code>的坐标获取不到，但是通过上述的渲染监听是得到，由于它这个方法可能会多次调用，因此我在其回调后将其去除。</p>
-<h3 id="u5206_u5272_u7EBF_u95EE_u9898"><a href="#u5206_u5272_u7EBF_u95EE_u9898" class="headerlink" title="分割线问题"></a>分割线问题</h3><p>由于<code>recyclerView</code>没有分割线，需要自己重写<code>RecyclerView.ItemDecoration</code>这个类来实现分割线，这样扩展性很好但是有一点需要注意，在重写<code>getItemOffsets</code>时，我们通常会自行设置一个<code>rect</code>的<code>left right top bottom</code>，而这些属性会在之后将本身item的高度或者宽度改变通过<code>paddingleft paddingRight paddingTop paddingBottom</code>。在项目中我的<code>RecyclerView</code>要固定三个显示，本身没有加分割线已经计算好各自item的高度了，然后加了分割线，就悲剧了。。。各种细微的偏移。</p>
-<h3 id="u5B50View_u7684_u95EE_u9898"><a href="#u5B50View_u7684_u95EE_u9898" class="headerlink" title="子View的问题"></a>子View的问题</h3><p><code>RecyclerView</code>可以通过<code>getChildAt(index)</code>来获取子view，但需要注意的是，它只能返回当前视图上可见的子<code>view</code>，并且在这个方法中<code>index = 当前可见子view数 - 1</code>，也就是说如果如果我想获取position=10的子view，但是视图上只有5个子view，这时候使用<code>getChildAt(10)</code>，它是返回<code>null</code>的，那我该怎么获取呢？其实应该使用以下方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.getLayoutManager().findViewByPosition(index)。</span><br></pre></td></tr></table></figure></p>
-<h3 id="select_u95EE_u9898"><a href="#select_u95EE_u9898" class="headerlink" title="select问题"></a>select问题</h3><p><code>recyclerView</code>本身没有<code>setSelectByPosition(int position)</code>方法，但是也可以做，可以在adapter设置一个<code>setSelect(int position)</code>方法，同时设置一个position变量在<code>adapter</code>中，当每次<code>setSelect</code>时将<code>itemView</code>存入recyclerView的<code>tag</code>中，然后在<code>tag</code>中取出之前存入的<code>itemView</code>将它的一些状态重置。</p>
-<h3 id="AS_u4F7F_u7528SVN"><a href="#AS_u4F7F_u7528SVN" class="headerlink" title="AS使用SVN"></a>AS使用SVN</h3><p>需要下一个svn的程序，同时配置环境变量。</p>
+<h3 id="recyclerView_u5FEB_u901F_u6EDA_u52A8_u4E27_u5931_u7126_u70B9"><a href="#recyclerView_u5FEB_u901F_u6EDA_u52A8_u4E27_u5931_u7126_u70B9" class="headerlink" title="recyclerView快速滚动丧失焦点"></a>recyclerView快速滚动丧失焦点</h3><p><code>recyclerView</code> 通过 <code>smoothScrollToPosition()</code>，在距离滚动会丧失焦点<br>但是如果距离短 仅仅移动一个<code>position</code>，是不会丧失焦点的。<br>需要根据业务判断是否做相应的处理。如果他总是被控制滚动一个，那就不用做处理。防止丧失焦点， 可以做隐藏处理。</p>
+<h3 id="Duplicate_files_copied_in_APK_META-INF/LICENSE-txt"><a href="#Duplicate_files_copied_in_APK_META-INF/LICENSE-txt" class="headerlink" title="Duplicate files copied in APK META-INF/LICENSE.txt"></a>Duplicate files copied in APK META-INF/LICENSE.txt</h3><p>之前android studio为了导入一个项目出现了这个问题，下面是解决方案<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">android &#123;  </span><br><span class="line">    packagingOptions &#123;  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/DEPENDENCIES.txt'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/LICENSE.txt'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/NOTICE.txt'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/NOTICE'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/LICENSE'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/DEPENDENCIES'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/notice.txt'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/license.txt'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/dependencies.txt'</span>  </span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/LGPL2.1'</span>  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="handler__u5185_u5B58_u6CC4_u9732_u7684_u89E3_u51B3_u65B9_u6848"><a href="#handler__u5185_u5B58_u6CC4_u9732_u7684_u89E3_u51B3_u65B9_u6848" class="headerlink" title="handler 内存泄露的解决方案"></a>handler 内存泄露的解决方案</h3><p><a href="https://my.oschina.net/rengwuxian/blog/181449" target="_blank" rel="external">https://my.oschina.net/rengwuxian/blog/181449</a></p>
 
       
     </div>
@@ -395,8 +354,8 @@ AS中使用SVN">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Baifann.github.io/2016/11/16/面试感悟/" rel="next" title="面试感悟">
-                <i class="fa fa-chevron-left"></i> 面试感悟
+              <a href="/Baifann.github.io/2017/01/02/2016总结/" rel="next" title="2016总结">
+                <i class="fa fa-chevron-left"></i> 2016总结
               </a>
             
           </div>
@@ -405,8 +364,8 @@ AS中使用SVN">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Baifann.github.io/2017/01/02/2016总结/" rel="prev" title="2016总结">
-                2016总结 <i class="fa fa-chevron-right"></i>
+              <a href="/Baifann.github.io/2017/01/02/一周工作的总结-translateX-View-X/" rel="prev" title="一周工作的总结 translateX View.X">
+                一周工作的总结 translateX View.X <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -433,8 +392,8 @@ AS中使用SVN">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/04/工作一周总结-recyclerView遇到的坑/"
-           data-title="工作一周总结 recyclerView遇到的坑" data-url="https://Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/">
+      <div class="ds-thread" data-thread-key="2017/01/02/一周工作总结-避免同类名文件出现/"
+           data-title="一周工作总结 避免同类名文件出现" data-url="https://Baifann.github.io/2017/01/02/一周工作总结-避免同类名文件出现/">
       </div>
     
   </div>
@@ -524,7 +483,7 @@ AS中使用SVN">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RecyclerView__u9047_u5230_u7684_u5751"><span class="nav-number">1.</span> <span class="nav-text">RecyclerView 遇到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7126_u70B9_u95EE_u9898"><span class="nav-number">1.1.</span> <span class="nav-text">焦点问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5206_u5272_u7EBF_u95EE_u9898"><span class="nav-number">2.</span> <span class="nav-text">分割线问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B50View_u7684_u95EE_u9898"><span class="nav-number">3.</span> <span class="nav-text">子View的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select_u95EE_u9898"><span class="nav-number">4.</span> <span class="nav-text">select问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AS_u4F7F_u7528SVN"><span class="nav-number">5.</span> <span class="nav-text">AS使用SVN</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DF7_u6DC6_u65F6_u6CE8_u610F_u540C_u7C7B_u540D_u6587_u4EF6"><span class="nav-number">1.</span> <span class="nav-text">混淆时注意同类名文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#recyclerView_u5FEB_u901F_u6EDA_u52A8_u4E27_u5931_u7126_u70B9"><span class="nav-number">2.</span> <span class="nav-text">recyclerView快速滚动丧失焦点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duplicate_files_copied_in_APK_META-INF/LICENSE-txt"><span class="nav-number">3.</span> <span class="nav-text">Duplicate files copied in APK META-INF/LICENSE.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#handler__u5185_u5B58_u6CC4_u9732_u7684_u89E3_u51B3_u65B9_u6848"><span class="nav-number">4.</span> <span class="nav-text">handler 内存泄露的解决方案</span></a></li></ol></div>
             
 
           </div>

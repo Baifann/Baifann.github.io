@@ -84,43 +84,19 @@
 
 
 
-<meta name="description" content="工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有
-
-Android TV中RecyclerView 遇到的坑
-焦点问题
-分割线问题
-子view问题
-设置select问题
-
-
-AS中使用SVN">
+<meta name="description" content="属性动画transalteX View.X
+CardView使用的坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="工作一周总结 recyclerView遇到的坑">
-<meta property="og:url" content="https://Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/index.html">
+<meta property="og:title" content="一周工作的总结 translateX View.X">
+<meta property="og:url" content="https://Baifann.github.io/2017/01/02/一周工作的总结-translateX-View-X/index.html">
 <meta property="og:site_name" content="baifann's Notes">
-<meta property="og:description" content="工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有
-
-Android TV中RecyclerView 遇到的坑
-焦点问题
-分割线问题
-子view问题
-设置select问题
-
-
-AS中使用SVN">
-<meta property="og:updated_time" content="2016-12-04T07:43:18.000Z">
+<meta property="og:description" content="属性动画transalteX View.X
+CardView使用的坑">
+<meta property="og:updated_time" content="2017-01-02T12:40:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="工作一周总结 recyclerView遇到的坑">
-<meta name="twitter:description" content="工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有
-
-Android TV中RecyclerView 遇到的坑
-焦点问题
-分割线问题
-子view问题
-设置select问题
-
-
-AS中使用SVN">
+<meta name="twitter:title" content="一周工作的总结 translateX View.X">
+<meta name="twitter:description" content="属性动画transalteX View.X
+CardView使用的坑">
 
 
 
@@ -152,7 +128,7 @@ AS中使用SVN">
 
 
 
-  <title> 工作一周总结 recyclerView遇到的坑 | baifann's Notes </title>
+  <title> 一周工作的总结 translateX View.X | baifann's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +249,7 @@ AS中使用SVN">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2017/01/02/一周工作的总结-translateX-View-X/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="baifann">
@@ -297,7 +273,7 @@ AS中使用SVN">
             
             
               
-                工作一周总结 recyclerView遇到的坑
+                一周工作的总结 translateX View.X
               
             
           </h1>
@@ -318,8 +294,8 @@ AS中使用SVN">
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/04/工作一周总结-recyclerView遇到的坑/" itemprop="commentCount"></span>
+                <a href="/Baifann.github.io/2017/01/02/一周工作的总结-translateX-View-X/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/02/一周工作的总结-translateX-View-X/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -350,25 +326,24 @@ AS中使用SVN">
       
 
       
-        <p>工作一周，由于之前并没有Android TV开发的经验，因此这周还是学到很多东西的，现在我将其归纳主要有</p>
-<ul>
-<li>Android TV中RecyclerView 遇到的坑<ul>
-<li>焦点问题</li>
-<li>分割线问题</li>
-<li>子view问题</li>
-<li>设置select问题</li>
-</ul>
-</li>
-<li>AS中使用SVN</li>
+        <ul>
+<li>属性动画transalteX View.X</li>
+<li>CardView使用的坑</li>
 </ul>
 <a id="more"></a>
-<h3 id="RecyclerView__u9047_u5230_u7684_u5751"><a href="#RecyclerView__u9047_u5230_u7684_u5751" class="headerlink" title="RecyclerView 遇到的坑"></a>RecyclerView 遇到的坑</h3><h4 id="u7126_u70B9_u95EE_u9898"><a href="#u7126_u70B9_u95EE_u9898" class="headerlink" title="焦点问题"></a>焦点问题</h4><p>主要是recyclerView中并没有像ListView有一些健全的方法，如开始时需要自己的<code>itemView</code>获取焦点，以及<code>itemView</code>设置焦点。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">view</span><span class="class">.requestFocus</span>();</span><br><span class="line"><span class="tag">itemView</span><span class="class">.setFocusable</span>(<span class="tag">true</span>);</span><br></pre></td></tr></table></figure></p>
-<p>这2个方法是处理itemView焦点的，一个是先让它有焦点，一个是将焦点设置在这个view上。但是在<code>recycerView</code>并不会一开始就把自己的<code>itemView</code>创建出来，你需要知道什么时候<code>itemView</code>创建完成，才能将焦点设置在它的身上。这时候需要这个方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                View itemView = getItemIndex(<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">if</span> (itemView == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (mOnMeasureListener != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    mOnMeasureListener.onGetFirstItem(itemView);</span><br><span class="line">                &#125;</span><br><span class="line">                Rect rect = <span class="keyword">new</span> Rect();</span><br><span class="line">                itemView.getGlobalVisibleRect(rect);</span><br><span class="line">                Log.i(<span class="string">"zoom"</span>, rect.toString());</span><br><span class="line">                getViewTreeObserver().removeGlobalOnLayoutListener(<span class="keyword">this</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>你也可以在<code>adapter</code>中通过<code>position = index</code>来设置焦点，但是我的项目中有这样一个要求，有一个焦点框，它会显示在当前有焦点的<code>view</code>上，此时我需要用<code>view..getGlobalVisibleRect(rect);</code>来获取<code>view</code>的坐标，通过坐标将焦点框设置，但是在初始化<code>adapter</code>里，<code>itemView</code>的坐标获取不到，但是通过上述的渲染监听是得到，由于它这个方法可能会多次调用，因此我在其回调后将其去除。</p>
-<h3 id="u5206_u5272_u7EBF_u95EE_u9898"><a href="#u5206_u5272_u7EBF_u95EE_u9898" class="headerlink" title="分割线问题"></a>分割线问题</h3><p>由于<code>recyclerView</code>没有分割线，需要自己重写<code>RecyclerView.ItemDecoration</code>这个类来实现分割线，这样扩展性很好但是有一点需要注意，在重写<code>getItemOffsets</code>时，我们通常会自行设置一个<code>rect</code>的<code>left right top bottom</code>，而这些属性会在之后将本身item的高度或者宽度改变通过<code>paddingleft paddingRight paddingTop paddingBottom</code>。在项目中我的<code>RecyclerView</code>要固定三个显示，本身没有加分割线已经计算好各自item的高度了，然后加了分割线，就悲剧了。。。各种细微的偏移。</p>
-<h3 id="u5B50View_u7684_u95EE_u9898"><a href="#u5B50View_u7684_u95EE_u9898" class="headerlink" title="子View的问题"></a>子View的问题</h3><p><code>RecyclerView</code>可以通过<code>getChildAt(index)</code>来获取子view，但需要注意的是，它只能返回当前视图上可见的子<code>view</code>，并且在这个方法中<code>index = 当前可见子view数 - 1</code>，也就是说如果如果我想获取position=10的子view，但是视图上只有5个子view，这时候使用<code>getChildAt(10)</code>，它是返回<code>null</code>的，那我该怎么获取呢？其实应该使用以下方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">recyclerView.getLayoutManager().findViewByPosition(index)。</span><br></pre></td></tr></table></figure></p>
-<h3 id="select_u95EE_u9898"><a href="#select_u95EE_u9898" class="headerlink" title="select问题"></a>select问题</h3><p><code>recyclerView</code>本身没有<code>setSelectByPosition(int position)</code>方法，但是也可以做，可以在adapter设置一个<code>setSelect(int position)</code>方法，同时设置一个position变量在<code>adapter</code>中，当每次<code>setSelect</code>时将<code>itemView</code>存入recyclerView的<code>tag</code>中，然后在<code>tag</code>中取出之前存入的<code>itemView</code>将它的一些状态重置。</p>
-<h3 id="AS_u4F7F_u7528SVN"><a href="#AS_u4F7F_u7528SVN" class="headerlink" title="AS使用SVN"></a>AS使用SVN</h3><p>需要下一个svn的程序，同时配置环境变量。</p>
+<h3 id="u5C5E_u6027_u52A8_u753BtransalteX_View-x"><a href="#u5C5E_u6027_u52A8_u753BtransalteX_View-x" class="headerlink" title="属性动画transalteX View.x"></a>属性动画transalteX View.x</h3><p>之前有这样一个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(view, <span class="string">"translationX"</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure></p>
+<p>在google的官方例子中有类似<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(view, <span class="string">"View.x"</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure></p>
+<p>这两个方法都能给控件带来位移效果，但是是略有不同的。<br>前者是改变控件的<code>translateX</code>属性，而后者是改变<code>x</code>属性。那<code>translateX</code>和<code>x</code>，又有什么不同呢？<br><code>translateX</code>代表控件在父类布局中的偏移量，初始化时为0。<br>而<code>x</code>代表的是控件左上角的坐标（横坐标）。也是相对于父类布局而言的。<br>在官方文档上有形容<code>x</code>有这么一段说明</p>
+<pre><code>This is equivalent to the translationX property plus the current left property.
+</code></pre><p>也就是说<code>x</code>的值是<code>translationX</code>加上<code>left</code> <code>getX() = getTranslationX() + getLeft()</code><br>而<code>left</code>暂且不用管。<br>我们需要知道的是，当一个控件在平移移过程中，控件的<code>left</code>属性是不会改变的，改变的只有<code>x</code>和<code>translateX</code>。由于之前的定义那是不是就意味着，当改变<code>x</code>值时，是不是根本就是改变<code>translateX</code>的值呢？<br>有关view坐标属性的更多介绍可以参考：<a href="http://www.imooc.com/article/3528" target="_blank" rel="external">http://www.imooc.com/article/3528</a></p>
+<h3 id="u5F71_u54CD_u5E73_u79FB_u7684_u4E00_u4E9B_u5C5E_u6027"><a href="#u5F71_u54CD_u5E73_u79FB_u7684_u4E00_u4E9B_u5C5E_u6027" class="headerlink" title="影响平移的一些属性"></a>影响平移的一些属性</h3><ul>
+<li>在平移的过程当中，如果需要平移的控件的父布局当中还存在着其他控件，那平移的过程可能不会达到预期。比如会出现更卡顿的情况。</li>
+<li>控件所在父布局如果存在<code>padding</code>属性，那也有可能会使预期达到的值不同，比方说<code>translationX</code>属性动画，当父布局如果有<code>paddingLeft = 20</code>属性存在着。调用以下方法。最终控件的绝对位置却到达了<code>320</code>。所以如果可以，尽量保证需要发生的位移的控件处于单独的一层布局中，并且没有<code>margin</code>和<code>padding</code>属性。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat(view, <span class="string">"translationX"</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="CardView_u4F7F_u7528_u7684_u5751"><a href="#CardView_u4F7F_u7528_u7684_u5751" class="headerlink" title="CardView使用的坑"></a>CardView使用的坑</h3><p>cardView在5.0以下系统上会有默认margin，所以使用时应该先去除margin。不然如果不去直接和recyclerView配合使用，分割线不好处理。<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">app:</span>cardElevation=<span class="string">"0dp"</span></span><br><span class="line"><span class="label">app:</span>cardMaxElevation=<span class="string">"0dp"</span></span><br></pre></td></tr></table></figure></p>
+<p>来自于：<a href="http://stackoverflow.com/questions/26995236/cardview-inside-recyclerview-has-extra-margins" target="_blank" rel="external">http://stackoverflow.com/questions/26995236/cardview-inside-recyclerview-has-extra-margins</a></p>
+<h3 id="recyclerView-this-notifyDataSetChanged_28_29_u5931_u53BB_u7126_u70B9_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#recyclerView-this-notifyDataSetChanged_28_29_u5931_u53BB_u7126_u70B9_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="recyclerView.this.notifyDataSetChanged()失去焦点的解决方法"></a>recyclerView.this.notifyDataSetChanged()失去焦点的解决方法</h3><p>使用<code>notifyDataSetChanged()</code>会失去焦点。所以如果要插入数据的情况下，一般使用<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">notifyItemRangeInserted(<span class="keyword">int</span> positionStart, <span class="keyword">int</span> itemCount)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -395,8 +370,8 @@ AS中使用SVN">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Baifann.github.io/2016/11/16/面试感悟/" rel="next" title="面试感悟">
-                <i class="fa fa-chevron-left"></i> 面试感悟
+              <a href="/Baifann.github.io/2017/01/02/一周工作总结-避免同类名文件出现/" rel="next" title="一周工作总结 避免同类名文件出现">
+                <i class="fa fa-chevron-left"></i> 一周工作总结 避免同类名文件出现
               </a>
             
           </div>
@@ -404,10 +379,6 @@ AS中使用SVN">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Baifann.github.io/2017/01/02/2016总结/" rel="prev" title="2016总结">
-                2016总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,8 +404,8 @@ AS中使用SVN">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/04/工作一周总结-recyclerView遇到的坑/"
-           data-title="工作一周总结 recyclerView遇到的坑" data-url="https://Baifann.github.io/2016/12/04/工作一周总结-recyclerView遇到的坑/">
+      <div class="ds-thread" data-thread-key="2017/01/02/一周工作的总结-translateX-View-X/"
+           data-title="一周工作的总结 translateX View.X" data-url="https://Baifann.github.io/2017/01/02/一周工作的总结-translateX-View-X/">
       </div>
     
   </div>
@@ -524,7 +495,7 @@ AS中使用SVN">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RecyclerView__u9047_u5230_u7684_u5751"><span class="nav-number">1.</span> <span class="nav-text">RecyclerView 遇到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7126_u70B9_u95EE_u9898"><span class="nav-number">1.1.</span> <span class="nav-text">焦点问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5206_u5272_u7EBF_u95EE_u9898"><span class="nav-number">2.</span> <span class="nav-text">分割线问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B50View_u7684_u95EE_u9898"><span class="nav-number">3.</span> <span class="nav-text">子View的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select_u95EE_u9898"><span class="nav-number">4.</span> <span class="nav-text">select问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AS_u4F7F_u7528SVN"><span class="nav-number">5.</span> <span class="nav-text">AS使用SVN</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027_u52A8_u753BtransalteX_View-x"><span class="nav-number">1.</span> <span class="nav-text">属性动画transalteX View.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F71_u54CD_u5E73_u79FB_u7684_u4E00_u4E9B_u5C5E_u6027"><span class="nav-number">2.</span> <span class="nav-text">影响平移的一些属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CardView_u4F7F_u7528_u7684_u5751"><span class="nav-number">3.</span> <span class="nav-text">CardView使用的坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#recyclerView-this-notifyDataSetChanged_28_29_u5931_u53BB_u7126_u70B9_u7684_u89E3_u51B3_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">recyclerView.this.notifyDataSetChanged()失去焦点的解决方法</span></a></li></ol></div>
             
 
           </div>
