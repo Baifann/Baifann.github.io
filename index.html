@@ -247,6 +247,126 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2017/02/20/在Retrofit中保持session/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="baifann">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="baifann's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/Baifann.github.io/2017/02/20/在Retrofit中保持session/" itemprop="url">
+                  在Retrofit中保持session
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/Baifann.github.io/2017/02/20/在Retrofit中保持session/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/在Retrofit中保持session/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>要让web端每个请求保持同一个<code>session</code>，需要发起请求时附带<code>cookie</code></p>
+<h3 id="retroift_u8BBE_u7F6Ecookie"><a href="#retroift_u8BBE_u7F6Ecookie" class="headerlink" title="retroift设置cookie"></a>retroift设置cookie</h3><p>增加依赖</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'</span></span><br></pre></td></tr></table></figure>
+<p>设置代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CookieManager cookieManager = <span class="keyword">new</span> CookieManager();</span><br><span class="line">cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);</span><br><span class="line">  client = client.newBuilder()</span><br><span class="line">                    .addInterceptor(<span class="keyword">new</span> HeaderInterceptor())</span><br><span class="line">                    .cookieJar(<span class="keyword">new</span> JavaNetCookieJar(cookieManager))</span><br><span class="line">                    .build();</span><br><span class="line"><span class="comment">//builder.cookieJar(new JavaNetCookieJar(cookieManager));</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2017/01/02/一周工作的总结-translateX-View-X/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1433,127 +1553,6 @@ umengAppKey=*************
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://Baifann.github.io/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="baifann">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/Baifann.github.io/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="baifann's Notes">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="baifann's Notes" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/" itemprop="url">
-                  通过actiivty名字(String) 来跳转activiy
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/06/通过actiivty名字-String-来跳转activiy/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>用<code>String</code>类型做参数进行的话一般可以通过<code>setAction</code>隐式跳转，或者是通过反射获取到<code>class</code></p>
-<p>普通的跳转例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(DemoActivity.<span class="keyword">this</span>, DemoActivity.class);</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Baifann.github.io/2016/02/06/通过actiivty名字-String-来跳转activiy/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1599,7 +1598,7 @@ umengAppKey=*************
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1609,7 +1608,7 @@ umengAppKey=*************
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
